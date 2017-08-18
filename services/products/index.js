@@ -7,13 +7,13 @@ class ProductsService {
 
   getAll(cb) {
     getAll(this.collection, result => {
-      cb({ message: 'The products has been succesfully listed.', mongoResult: result });
+      cb({ message: 'The products has been succesfully listed.', products: result });
     });
   }
 
   insertOne(product, cb) {
     insertOne(this.collection, product, result => {
-      cb({ message: 'The product has been succesfully created.', mongoResult: result });
+      cb({ message: 'The product has been succesfully created.', insertedId: result });
     });
   }
 }
